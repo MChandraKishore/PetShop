@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PetShop</title>
+<style>
+  .styled {
+    text-align: left;
+  }
+  .spacing{
+    padding-left:40%;
+  }
+.navbar-brand{
+    font-family: 'Lobster', cursive;
+  }
+
+
+</style>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="assets\libs\bootstrap\css\bootstrap.min.css">
+  </head>
+  <body background="assets/images/bg.jpg" display="block">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="assets/images/logo.jpg" width="100px" height="100px">
+      <a class="navbar-brand" href="#">Dogies</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Signup</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+<br>
+<br>
+<form action="search.html">
+      <div>
+        <img src="assets/images/cover.png" width="1519px" height="500px">
+        <h3 class="m-4">Search:</h3>
+        <input class="favorite styled btn-lg ml-3" type="text" placeholder="Enter location">
+        <input class="favorite styled btn-lg ml-3" type="text" placeholder="Age" />
+        <select class="favorite styled btn-lg ml-3">
+            <option selected disabled>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <select class="favorite styled btn-lg ml-3">
+            <option selected disabled>Select Colour</option>
+            <option value="Black">Black</option>
+            <option value="Golden">Golden</option>
+            <option value="White">White</option>
+            <option value="Brown">Brown</option>
+        </select>
+        <select class="favorite styled btn-lg ml-3">
+          <option selected disabled>Bread Options</option>
+          <option value="Retriever">Retriever</option>
+          <option value="Bulldog">Bulldog</option>
+          <option value="Pug">Pug</option>
+          <option value="German Shepard">German Shepard</option>
+        </select>
+</div>
+
+<button type="submit" class="btn btn-secondary  btn-lg m-4">Search</button>
+</form>
+
+
+
+
+  </body>
+</html>

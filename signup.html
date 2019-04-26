@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css" />
+    <title>Signup | Petshop</title>
+  </head>
+  <body>
+    <div class="container">
+      <center>
+        <img src="assets/images/logo.jpg" width="100" />
+        <h2>Signup</h2>
+      </center>
+      <form action="#" method="POST" id="SignupForm">
+        <div class="form-group">
+          <label for="Username" class="control-label">Username</label>
+          <input type="text" class="form-control" id="Username" value="" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label for="Email" class="control-label">Email</label>
+          <input type="email" class="form-control" id="Email" value="" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="Password" class="control-label">Password</label>
+          <input type="password" class="form-control" id="Password" value="" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="RepeatPassword" class="control-label">Repeat Password</label>
+          <input type="password" class="form-control" id="RepeatPassword" value="" placeholder="Repeat Password">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success">Signup</button>
+        </div>
+        <a href="login.html">Already Registered? Login Now!</a>
+
+      </form>
+    </div>
+    <script type="text/javascript" src="assets/libs/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+    function isValidEmail(email){
+      if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+      $("#SignupForm").submit(function(){
+        var Username=$('#Username');
+        var Email=$('#Email');
+        var Password=$('#Password');
+        var RepeatPassword=$('#RepeatPassword');
+        Username.removeClass("is-invalid");
+        Email.removeClass("is-invalid");
+        Password.removeClass("is-invalid");
+        RepeatPassword.removeClass("is-invalid");
+        if(Username.val().length<5){
+          Username.addClass("is-invalid").focus();
+          alert("Enter Valid Username");
+        }
+        else if(!isValidEmail(Email.val())){
+          Email.addClass("is-invalid").focus();
+          alert("Enter Valid Email");
+        }
+        else if(Password.val().length<5){
+          Password.addClass("is-invalid").focus();
+          alert("Enter Valid Password");
+        }
+        else if(Password.val()!=RepeatPassword.val()){
+          RepeatPassword.addClass("is-invalid").focus();
+          alert("Passwords dont match");
+        }
+        else{
+          window.location="index.html";
+        }
+        return false;
+      });
+    </script>
+  </body>
+</html>

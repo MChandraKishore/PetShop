@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Place Order | PetShop</title>
+    <link rel="stylesheet" href="assets\libs\bootstrap\css\bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="rootwizard">
+      	<div class="navbar">
+      	  <div class="navbar-inner">
+      	    <div class="container">
+      	<ul>
+      		<li><a href="#delivery" data-toggle="tab">Delivery Details</a></li>
+      		<li><a href="#coupons" data-toggle="tab">Coupons</a></li>
+        	<li><a href="#summary" data-toggle="tab">Order Summary</a></li>
+      		<li><a href="#payment" data-toggle="tab">Payment</a></li>
+      	</ul>
+      	 </div>
+      	  </div>
+      	</div>
+      	<div id="bar" class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+          </div>
+      	<div class="tab-content">
+      	    <div class="tab-pane" id="delivery">
+      	      <div class="form-group">
+                <label class="control-label">Address Line 1</label>
+                <input type="text" class="form-control" placeholder="Address Line 1" />
+              </div>
+      	      <div class="form-group">
+                <label class="control-label">Address Line 2</label>
+                <input type="text" class="form-control" placeholder="Address Line 2" />
+              </div>
+      	      <div class="form-group">
+                <label class="control-label">City</label>
+                <input type="text" class="form-control" placeholder="City" />
+              </div>
+      	      <div class="form-group">
+                <label class="control-label">State</label>
+                <input type="text" class="form-control" placeholder="State" />
+              </div>
+      	      <div class="form-group">
+                <label class="control-label">Pincode</label>
+                <input type="text" class="form-control" placeholder="Pincode" />
+              </div>
+      	      <div class="form-group">
+                <label class="control-label">Phone Number</label>
+                <input type="text" class="form-control" placeholder="Phone Number" />
+              </div>
+      	    </div>
+      	    <div class="tab-pane" id="coupons">
+      	      	<p>
+      		      	<input type='text' name='name' id='name' placeholder='Enter Your Name'>
+      		      </p>
+      	    </div>
+      		<div class="tab-pane" id="summary">
+      			3
+      	    </div>
+      		<div class="tab-pane" id="payment">
+      			4
+      	    </div>
+      		<ul class="pager wizard">
+      			<li class="previous first" style="display:none;"><a href="#">First</a></li>
+      			<li class="previous"><a href="#">Previous</a></li>
+      			<li class="next last" style="display:none;"><a href="#">Last</a></li>
+      		  	<li class="next"><a href="#">Next</a></li>
+      		</ul>
+      	</div>
+      </div>
+    </div>
+    <script type="text/javascript" src="assets\libs\jquery\jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets\libs\bootstrap\js\bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets\libs\jquery\jquery.bootstrap.wizard.min.js"></script>
+    <script type="text/javascript">
+      $('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
+  			if(index==1) {
+  				// return false if invalid
+  			}
+
+  		}, onTabShow: function(tab, navigation, index) {
+  			var $total = navigation.find('li').length;
+  			var $current = index+1;
+  			var $percent = ($current/$total) * 100;
+  			$('#rootwizard .progress-bar').css({width:$percent+'%'});
+  		}});
+    </script>
+  </body>
+</html>
